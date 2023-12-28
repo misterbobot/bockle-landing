@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { products } from "../../data/products";
 import { Button } from "../../components/button/button";
 import { useWindowSize } from "@uidotdev/usehooks";
+import { generatePaymentUrl } from "../../utils/generatePaymentUrl";
 
 type TChechoutPageParams = {
     productId: string;
@@ -70,6 +71,15 @@ export const CheckoutPage: React.FC = (
               });
 
             return;
+        }
+
+        if (product ){
+
+        
+
+        const url = generatePaymentUrl(product, userData.email || '')
+
+         window.open(url);
         }
 
         setError(null);
