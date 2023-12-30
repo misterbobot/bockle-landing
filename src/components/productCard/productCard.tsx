@@ -12,7 +12,7 @@ export const ProductCard: React.FC<TProductCardProps> = ({ product }: TProductCa
 
     return (
         <div
-            className="border border-black flex flex-col sm:w-[400px] cursor-pointer"
+            className="border border-black flex flex-col w-[90vw] sm:w-[400px] cursor-pointer"
             onClick={() => {
                 navigate('/item/'+product.id)
             }}

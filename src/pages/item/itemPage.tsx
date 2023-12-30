@@ -10,7 +10,6 @@ import { useWindowSize } from "@uidotdev/usehooks";
 type TItemPageParams = {
     productId: string;
 }
-
 const IMAGE_WIDTH = '40vw';
 
 export const ItemPage: React.FC = () => {
@@ -59,6 +58,9 @@ export const ItemPage: React.FC = () => {
                     marginRight:  windowWidth && windowWidth > 1000 ? '0px' : '15px',
                     height: '100%'
                 }}
+                pagination={{
+                    clickable: true,
+                }}
             >
                 {
                     item?.images.map((image) => {
@@ -87,23 +89,23 @@ export const ItemPage: React.FC = () => {
                  />
             </div>
             </div>
-            <div className="flex-1 box-border md:px-20 px-1 h-full flex flex-col mt-10 md:mt-0 items-center md:items-start overflow-auto "
+            <div className="flex-1 box-border md:px-20 px-1 h-full flex flex-col mt-10 md:mt-0 items-center md:items-start overflow-auto min-w-[200px]"
                 style={{
                     justifyContent: 'safe center'
                 }}
             >
-                    <p className="text-black text-[64px] font-semibold md:leading-[60px] md:mb-10 mb-0  leading-[24px]">
+                    <p className="text-black text-[64px] font-semibold md:leading-[60px] md:mb-10 mb-0  leading-[54px] text-center">
                         {item?.name}
                     </p>
                     <div>
                         <p className="text-black text-[40px] font-semibold md:text-left text-center md:mb-0 mb-10">
                             {item?.priceRub}₽
                         </p>
-                        <div className="flex gap-10 flex-wrap md:mb-10 mb-0 md:w-60 w-full ">
-                            <p className="text-black text-2xl font-semibold break-all md:text-left text-center ">
+                        <div className="flex gap-10 flex-wrap md:mb-10 mb-0 md:w-100 w-full ">
+                            <p className="text-black text-2xl font-semibold md:text-left text-center ">
                                 {item?.description}
                             </p>
-                            <p className="text-black text-2xl font-semibold break-all md:text-left text-center">
+                            <p className="text-black text-2xl font-semibold md:text-left text-center">
                                 All items are refundable within 14 days of purchase. Contact us for more information.
                             </p>
                         </div>

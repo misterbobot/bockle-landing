@@ -20,3 +20,9 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+:root {
+--swiper-pagination-color: black;
+--swiper-pagination-bullet-inactive-color: white;
+--swiper-pagination-bullet-inactive-opacity: 1;
+
+}
