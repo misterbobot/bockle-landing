@@ -17,6 +17,7 @@ export const HomePage: React.FC = () => {
                 src="https://bockle.ru/images/1216(1).mp4"
                 autoPlay
                 muted
+                playsInline
                 loop
             />
         </div>
