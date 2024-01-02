@@ -131,7 +131,7 @@ export const CheckoutPage: React.FC = (
                             <p className="text-black text-[32px] font-semibold mr-5 w-[90px]">
                                 phone
                             </p>
-                            <input type="number"  className="border border-black h-8 px-2 w-min" value={
+                            <input  className="border border-black h-8 px-2 w-min" value={
                                 userData.phone || ''
                             } onInput={
                                 (e) => {
