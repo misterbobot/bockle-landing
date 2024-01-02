@@ -1,8 +1,7 @@
 
 import { ProductItem } from "../data/types";
 import { MNT_CURRENCY_CODE, MNT_ID, MNT_SUCCESS_URL } from "./consts";
-export const generatePaymentUrl = (item: ProductItem, userEmail: string) => {
-    const MNT_TRANSACTION_ID = Date.now().toString()+item.id;
+export const generatePaymentUrl = (item: ProductItem, userEmail: string, MNT_TRANSACTION_ID: string) => {
     const params = new URLSearchParams({
         MNT_ID: MNT_ID,
         MNT_TRANSACTION_ID: MNT_TRANSACTION_ID,

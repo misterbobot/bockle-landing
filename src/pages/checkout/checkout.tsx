@@ -4,6 +4,7 @@ import { products } from "../../data/products";
 import { Button } from "../../components/button/button";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { generatePaymentUrl } from "../../utils/generatePaymentUrl";
+import { placeOrder } from "../../api/placeOrder";
 
 type TChechoutPageParams = {
     productId: string;
@@ -60,7 +61,7 @@ export const CheckoutPage: React.FC = (
         })
     }, [userData]);
 
-    const handleCheckout = () => {
+    const handleCheckout = async () => {
         if (!areAllFieldsFilled) {
             setError('please, fill all the fields');
 
@@ -75,11 +76,22 @@ export const CheckoutPage: React.FC = (
 
         if (product ){
 
-        
+        const MNT_TRANSACTION_ID = Date.now().toString()+product.id;
 
-        const url = generatePaymentUrl(product, userData.email || '')
+        const url = generatePaymentUrl(product, userData.email || '', MNT_TRANSACTION_ID)
 
-         window.open(url);
+        placeOrder({
+            MNT_TRANSACTION_ID: MNT_TRANSACTION_ID,
+            USER_NAME: userData.name || '',
+            USER_EMAIL: userData.email || '',
+            USER_PHONE: userData.phone || '',
+            USER_CITY: userData.city || '',
+            USER_ADDRESS: userData.address || '',
+            USER_ZIP: userData.zip || '',
+            PRODUCT_ID: product.id,
+        }).then((res) => {
+            window.open(url, '_self');
+        })
         }
 
         setError(null);
