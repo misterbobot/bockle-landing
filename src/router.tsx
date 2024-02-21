@@ -35,4 +35,4 @@ export const router = createBrowserRouter([
       path: "*",
       element: <HomePage />,
     },
-  ]);
+  ], {basename: '/brand'});
