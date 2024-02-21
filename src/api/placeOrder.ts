@@ -1,4 +1,4 @@
-const API_URL = 'https://bockle.ru/place-order.php';
+const API_URL = 'https://bockle.ru/brand/place-order.php';
 
 export const placeOrder = async (order: {
     MNT_TRANSACTION_ID: string;
