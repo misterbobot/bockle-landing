@@ -8,11 +8,11 @@ export const NavBar: React.FC = () => {
                 BŌCKLĒ
             </a>
             <div className="flex sm:justify-start justify-center ">
-                <TextLink text="men" href="/men" />
-                <TextLink className="ml-10" text="woman" href="/woman" />
-                <TextLink className="ml-10" text="fw 24" href="/fw24" />
+                <TextLink text="men" href="/brand/men" />
+                <TextLink className="ml-10" text="woman" href="/brand/woman" />
+                <TextLink className="ml-10" text="fw 24" href="/brand/fw24" />
             </div>
-            <a href="/" className="hidden sm:block absolute left-1/2 top-1/2 -translate-x-2/4 -translate-y-2/4 text-[40px] font-extrabold">
+            <a href="/brand" className="hidden sm:block absolute left-1/2 top-1/2 -translate-x-2/4 -translate-y-2/4 text-[40px] font-extrabold">
                 BŌCKLĒ
             </a>
         </div>
